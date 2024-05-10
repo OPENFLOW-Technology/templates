@@ -1,0 +1,41 @@
+{
+  "dbConfig": {
+    "type": "mysql",
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "database": "test",
+    "port": 3306,
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/entity/**/*"],
+    "migrations": ["src/migration/**/*"],
+    "subscribers": ["src/subscriber/**/*"],
+    "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+    }
+  },
+
+  "swaggerConfig": {
+    "definition": {
+      "openapi": "3.0.0",
+      "components": {
+        "securitySchemes": {
+          "bearerAuth": {
+            "type": "http",
+            "scheme": "bearer",
+            "bearerFormat": "JWT"
+          }
+        }
+    },
+    "security": {"bearerAuth": []} ,
+      "info": {
+        "title": "Node REST API Template",
+        "version": "1.0.0"
+      }
+    },
+    "apis": ["./src/routes/*.ts", "./dist/routes/*.js"]
+  }
+}

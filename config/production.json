@@ -1,0 +1,32 @@
+{
+  "dbConfig": {
+    "type": "mysql",
+    "host": "localhost",
+    "username": "root",
+    "password": "",
+    "database": "test",
+    "port": 3306,
+    "synchronize": true,
+    "logging": false,
+    "entities": ["dist/entity/**/*"],
+    "migrations": ["dist/migration/**/*"],
+    "subscribers": ["dist/subscriber/**/*"],
+    "cli": {
+      "entitiesDir": "dist/entity",
+      "migrationsDir": "dist/migration",
+      "subscribersDir": "dist/subscriber"
+    }
+  },
+
+
+  "swaggerConfig": {
+    "definition": {
+      "openapi": "3.0.0",
+      "info": {
+        "title": "Node REST API Template",
+        "version": "1.0.0"
+      }
+    },
+    "apis": ["./dist/routes/*.js"]
+  }
+}
